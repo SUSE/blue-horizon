@@ -2,4 +2,16 @@
     "allow_custom_instance_type": false,
     "show_instance_type_tip": false,
     "cloud_framework": "Azure"
+    "top_menu_items": [
+    {
+        "key": "monitor",
+        "url": "%{monitoring_public_ip}:3000"
+        // FIXME: discuss if we want this
+        //"target_new_window": true
+    },
+    {
+        "key": "tuning",
+        "url": "%{monitoring_public_ip}:3000"
+    }
+]
 }
