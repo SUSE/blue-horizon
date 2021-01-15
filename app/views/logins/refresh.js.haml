@@ -1,0 +1,34 @@
+$("#subscription").html("#{j (render partial: 'subscription')}");
+- if @code.present?
+  // Start an active polling to check if the login has worked
+  fetch_state();
+- elsif @logged_account && @logged_account[:logged]
+  $("#login").hide();
+  $("#logout").show();
+  $(".steps-container").find(".btn-primary").removeClass("disabled");
+- else
+  $("#login").show();
+  $("#logout").hide();
+  $(".steps-container").find(".btn-primary").addClass("disabled");
+
+function fetch_state() {
+$.ajax({
+type: "GET",
+url: "login",
+dataType: "json",
+success: function(data) {
+if (data.logged_account.logged) {
+// This additional Ajax call is used to render the new partial with the updated data
+$.ajax({
+type: "GET",
+url: "login",
+dataType: "script"
+});
+} else {
+setTimeout(function() {
+fetch_state();
+}, 5000);
+}
+}
+});
+}

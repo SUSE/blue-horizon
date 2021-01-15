@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resource :plan, only: [:show, :update]
   # Deploy
   resource :deploy, only: [:update, :destroy]
+  # Login
+  resource :login, only: [:show, :update, :destroy]
 
   resources :dashboards, only: [:show]
 

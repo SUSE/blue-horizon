@@ -5,6 +5,7 @@ Rails.application.configure do
   # EOS icon names for each navigation path
   config.x.sidebar_icons = {
     welcome:   'announcement',
+    login:     'login',
     cluster:   'photo_size_select_small',
     variables: 'playlist_add',
     plan:      'organization',
@@ -16,6 +17,7 @@ Rails.application.configure do
   # menus for each path
   config.x.menu_items = [
     :welcome,
+    :login,
     :cluster,
     :variables,
     :plan,

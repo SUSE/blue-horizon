@@ -11,7 +11,7 @@
   - if Rails.configuration.x.terraform_sources_url.present?
     %button.btn.btn-lg.btn-secondary{ type: 'button', data: { toggle: 'modal', target: '#source' } }
       %i.eos-icons.no-trailing-space edit
-  %a.btn.btn-lg.btn-primary{ href: cluster_path }
-    = t('sidebar.simple')
+  %a.btn.btn-lg.btn-primary{ href: login_path }
+    = t('sidebar.login')
 - if Rails.configuration.x.terraform_sources_url.present?
   = render 'welcome/source'

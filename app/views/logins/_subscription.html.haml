@@ -1,0 +1,18 @@
+- if @code.present?
+  %dl.row
+    %dt.col-2 Code:
+    %dd.col-10=@code
+  %p.clearfix
+  %span= 'Use the next link and the provided code to Login in your Azure subscription: '
+  = link_to "Login page", "https://microsoft.com/devicelogin", target: "_blank"
+  %p.clearfix
+  %span= 'After authenticating in the Azure portal wait until the login process is identified (it might take some few seconds)'
+- elsif @logged_account[:logged]
+  %h4 Currently logged as:
+  %dl.row
+    %dt.col-2 Subscription:
+    %dd.col-10=@logged_account[:subscription]
+    %dt.col-2 User:
+    %dd.col-10=@logged_account[:user]
+- else
+  %p= 'There is not any user logged in yet. Start the login process'

@@ -5,6 +5,7 @@ module AuthorizationHelper
   def can(path)
     result =
       session_check(path) &&
+      user_logged_check(path) &&
       terraform_action_check(path) &&
       flow_restriction_checks(path)
     logger.debug "AUTH: #{result ? 'can' : 'cannot'} access #{path}"
@@ -13,6 +14,7 @@ module AuthorizationHelper
 
   def check_and_alert(path)
     session_check_flash(path) &&
+      user_logged_check_flash(path) &&
       terraform_action_check_flash(path) &&
       flow_restriction_checks_flash(path)
   end
@@ -49,6 +51,15 @@ module AuthorizationHelper
     end
   end
 
+  def user_logged_check(path)
+    case path
+    when welcome_path, login_path
+      true
+    else
+      user_logged?
+    end
+  end
+
   def terraform_action_check(path)
     case path
     when welcome_path, send_current_status_deploy_path
@@ -75,6 +86,13 @@ module AuthorizationHelper
     return true if session_check(path)
 
     flash[:error] = t('non_active_session')
+    false
+  end
+
+  def user_logged_check_flash(path)
+    return true if user_logged_check(path)
+
+    flash[:error] = t('non_user_logged')
     false
   end
 
@@ -121,5 +139,9 @@ module AuthorizationHelper
 
   def terraform_running?
     KeyValue.get(:active_terraform_action).present?
+  end
+
+  def user_logged?
+    KeyValue.get(:active_logged_user).present?
   end
 end

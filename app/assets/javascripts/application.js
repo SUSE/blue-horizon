@@ -25,5 +25,6 @@
 //= require layout.js
 //= require variables.js
 //= require resources.js
+//= require login.js
 // Custom
 //= require custom.js

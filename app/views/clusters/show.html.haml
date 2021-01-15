@@ -9,8 +9,8 @@
     = render "cluster_size_panel", form: form
     %p.clearfix
   %div.float-right.btn-group.steps-container
-    = link_to welcome_path, class: "btn btn-secondary", title: t('tooltips.prior_step'), data: { toggle: 'tooltip' } do
-      = t('sidebar.welcome')
+    = link_to login_path, class: "btn btn-secondary", title: t('tooltips.prior_step'), data: { toggle: 'tooltip' } do
+      = t('sidebar.login')
     %button.btn.btn-primary#submit-cluster{ type: 'submit', title: t('tooltips.next_step'), data: { toggle: 'tooltip' } }
       = t('sidebar.variables')
 %p.clearfix

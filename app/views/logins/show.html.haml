@@ -1,0 +1,28 @@
+%div.card
+  %h3.card-header= t('page_title.login')
+  %div.card-body
+    %p= markdown(t('page_subtitle.login_info'))
+    %hr
+    = loading_icon(hide: true)
+    %div#subscription
+      = render('logins/subscription')
+    %hr
+    %div.float-left
+      - if @logged_account[:logged]
+        = link_to login_path, class: "btn btn-primary", id: "logout", title: t('tooltips.logout'), data: { method: :delete, remote: true, toggle: 'tooltip' } do
+          = t('action.logout')
+        = link_to login_path, class: "btn btn-primary", style: "display: none", id: "login", title: t('tooltips.login'), data: { method: :put, remote: true, toggle: 'tooltip' } do
+          = t('action.login')
+      - else
+        = link_to login_path, class: "btn btn-primary", id: "login", title: t('tooltips.login'), data: { method: :put, remote: true, toggle: 'tooltip' } do
+          = t('action.login')
+        = link_to login_path, class: "btn btn-primary", style: "display: none", id: "logout", title: t('tooltips.logout'), data: { method: :delete, remote: true, toggle: 'tooltip' } do
+          = t('action.logout')
+
+%p.clearfix
+  %div.float-right.btn-group.steps-container
+    - logged = @logged_account[:logged]
+    = link_to welcome_path, class: "btn btn-secondary", title: t('tooltips.prior_step'), data: { toggle: 'tooltip' } do
+      = t('sidebar.welcome')
+    = link_to cluster_path, class: "btn btn-primary #{'disabled' if !logged}", title: t('tooltips.next_step'), data: { toggle: 'tooltip' } do
+      = t('sidebar.cluster')

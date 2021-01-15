@@ -36,6 +36,7 @@ en:
   deploy: "Deploy"
   terraform_files: "terraform scripts and log"
   non_active_session: "Duplicate session!"
+  non_user_logged: "There is not a logged user. Run the login process first"
   session_reset: "The active session has been reset."
   password_show: "Show password"
   password_hide: "Hide password"
@@ -53,6 +54,10 @@ en:
     reset_session: "Reset session"
     affirm: "OK"
     plan: "Update plan"
+    login: "Login"
+    logout: "Logout"
+    refresh_login: "Refresh"
+    refreshing: "Refreshing"
 
   sidebar:
     welcome: "Welcome"
@@ -65,6 +70,7 @@ en:
     wrapup: "Next steps"
     download: "Download"
     simple: "Start setup"
+    login: "Cloud credentials"
 
   console_sidebar:
     ha_cluster: "HA cluster"
@@ -99,6 +105,9 @@ en:
     loading: "Loading..."
     copy: "Copy to clipboard"
     copied: "Copied!"
+    login: "Login to your Azure subscription"
+    logout: "Logout the current user"
+    refresh_login: "Refresh login status"
 
   page_title:
     cluster: "SAP System size"
@@ -107,6 +116,7 @@ en:
     wrapup: "Next steps after deployment"
     source: "Working directly with deployment source scripts"
     resources: "Additional resources"
+    login: "Login to your Azure subscription"
 
   page_subtitle:
     hana_ha_info: |
@@ -123,6 +133,8 @@ en:
       Your application has been deployed, here's how to use it.
     resources_info: |
       Find here additional resources to use the project. [Download](/download) your results and follow the instructions below.
+    login_info: |
+      Login to your Azure subscription to enable the deployment. The SAP environment resources are created with this user.
 
   content:
     explain_duplicate_session: |
