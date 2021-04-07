@@ -123,7 +123,7 @@ en:
     cluster: "SAP System size"
     plan: "Plan your deployment"
     deploy: "Deploy your cluster"
-    home: "Welcome to your SAP console!"
+    home: "Welcome to your SUSE Console for SAP Applications!"
     source: "Working directly with deployment source scripts"
     resources: "Additional resources"
 

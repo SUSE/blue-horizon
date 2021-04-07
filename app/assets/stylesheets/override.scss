@@ -67,5 +67,30 @@ i.eos-icons.no-trailing-space {
   min-width: 8em;
 }
 
+$main-menu-width: 320px;
+$main-menu-width-collapsed: 60px;
+
+.main-menu {
+  width: $main-menu-width !important;
+  max-width: $main-menu-width !important;
+}
+
+.collapsed-sidebar.main-menu {
+  width: $main-menu-width-collapsed !important;
+  max-width: $main-menu-width-collapsed !important;
+}
+
+.content {
+  margin-left: $main-menu-width;
+}
+
+.collapsed-sidebar.content {
+  margin-left: $main-menu-width-collapsed !important;
+}
+
+.footer-side-menu {
+  width: $main-menu-width;
+}
+
 // A placeholder for custom CSS.
 // This will be loaded last, and overrride other content.
