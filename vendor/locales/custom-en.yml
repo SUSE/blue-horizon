@@ -3,9 +3,9 @@
 
 en:
   # Application title - shown on the home page
-  title: "SUSE SAP Console"
+  title: "SUSE Console for SAP Applications"
   # Abbreviated title for use in navigation
-  short_title: "SUSE SAP Console"
+  short_title: "SUSE Console for SAP Applications"
   # Sidebar
   sidebar:
     welcome: "Deployment"
@@ -26,7 +26,7 @@ en:
     cluster: "SAP System size"
     plan: "Review and Confirm"
     deploy: "Deploy your SAP environment"
-    home: "Welcome to your SUSE SAP console"
+    home: "Welcome to your SUSE Console for SAP Applications"
     source: "Working directly with deployment source scripts"
     resources: "Additional resources"
 
@@ -143,7 +143,7 @@ en:
     Your SAP environment has been created successfully.
     You can find the created resources <a href="%{resource_group_url}" target="_blank">clicking here</a>.
 
-    Now, you can continue using the SAP console to **monitor** and **tune** the created machines using the top menu.
+    Now, you can continue using the SUSE Console for SAP Applications to **monitor** and **tune** the created machines using the top menu.
 
     Besides that, you can download the files created during the deployment. Check for more options in the **resources** tab.
 
